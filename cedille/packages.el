@@ -29,21 +29,14 @@
 
 ;;; Code:
 
-(defconst cedille-mode-packages
+(defconst cedille-packages
   '((cedille-mode :location local))
 )
 
-(defun cedille-mode/init-cedille-mode ()
+(defun cedille/init-cedille-mode ()
   (use-package cedille-mode
-	       :mode "\\*.ced\\'"
+    :init
+    (require 'cedille-mode)
   ))
-
-(defun cedille-mode/pre-init-cedille-mode ()
-  (use-package cedille-mode)
-  (progn
-    (setq cedille-path "/Users/pedroabreu/gitprojects/cedille")
-    (add-to-list 'load-path cedille-path)
-    )
-  )
 
 ;;; packages.el ends here
